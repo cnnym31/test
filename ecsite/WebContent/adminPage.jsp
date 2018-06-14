@@ -82,15 +82,15 @@
 			<h3>===ユーザー情報===</h3>
 			<s:form>
 				<input type="button" value="登録" onclick="submitAction('UserCreateAction')"/><br><br>
-				<input type="button" value="更新" onclick="submitAction('UserUpdateAction')"/><br><br>
+				<input type="button" value="更新" onclick="submitAction('GoUserUpdateAction')"/><br><br>
 				<input type="button" value="削除" onclick="submitAction('UserDeleteAction')"/><br><br>
 			</s:form>
 
 			<h3>===商品情報===</h3>
 			<s:form>
 				<input type="button" value="登録" onclick="submitAction('ItemCreateAction')"/><br><br>
-				<input type="button" value="更新" onclick="submitAction('')"/><br><br>
-				<input type="button" value="削除" onclick="submitAction('ItemDeleteAction')"/><br><br>
+				<input type="button" value="更新" onclick="submitAction('GoItemUpdateAction')"/><br><br>
+				<input type="button" value="削除" onclick="submitAction('GoItemDeleteAction')"/><br><br>
 			</s:form>
 
 		</div>

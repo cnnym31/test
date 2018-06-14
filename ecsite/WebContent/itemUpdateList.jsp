@@ -10,7 +10,7 @@
 		<meta http-equiv="imagetoolbar" content="no"/>
 		<meta name="description" content=""/>
 		<meta name="keywords" content=""/>
-		<title>UserUpdate画面</title>
+		<title>ItemUpdate画面</title>
 
 		<style type="text/css">
 		/* ========TAG LAYOUT======== */
@@ -66,45 +66,39 @@
 
 	<div id="main">
 		<div id="top">
-			<p>UserUpdate</p>
+			<p>ItemUpdate</p>
 		</div>
 
 		<div>
-			<table>
-				<s:form action="UserUpdateConfirmAction">
+			<s:if test="itemList == null">
+				<h3>登録商品はありません。</h3>
+			</s:if>
+
+			<s:else>
+			<table border="1">
+				<tr>
+					<th>No.</th>
+					<th>商品名</th>
+					<th>価格</th>
+					<th>在庫数</th>
+					<th>登録日</th>
+					<th>最終更新日</th>
+				</tr>
+				<s:iterator value="itemList">
 					<tr>
-						<td>
-							<label>ログインID：</label>
-						</td>
-						<td>
-							<input type="text" name="newLoginUserId" value=""/>
-						</td>
+						<td><s:property value="id"/></td>
+						<td><s:property value="itemName"/></td>
+						<td><s:property value="itemPrice"/></td>
+						<td><s:property value="itemStock"/></td>
+						<td><s:property value="insert_date"/></td>
+						<td><s:property value="update_date"/></td>
 					</tr>
-					<tr>
-						<td>
-							<label>ログインPASS：</label>
-						</td>
-						<td>
-							<input type="text" name="newLoginPassword" value=""/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>ユーザー名：</label>
-						</td>
-						<td>
-							<input type="text" name="newUserName" value=""/>
-						</td>
-					</tr>
-					<s:submit value="更新"/>
-				</s:form>
+				</s:iterator>
 			</table>
+			</s:else>
 
 			<div>
 				<span>前画面に戻る場合は</span>
-				<a href='<s:url action="GoUserPadateAction"/>'>こちら</a>
-				<br>
-				<span>管理者画面に戻る場合は</span>
 				<a href='<s:url action="GoAdminPageAction"/>'>こちら</a>
 			</div>
 		</div>

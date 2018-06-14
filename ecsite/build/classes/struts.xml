@@ -82,11 +82,23 @@
 			<result name="success">home.jsp</result>
 		</action>
 
+		<!-- GoUserUpdateAction -->
+		<action name="GoUserUpdateAction" class="com.internousdev.ecsite.action.GoUserUpdateAction"
+		method="execute">
+			<result name="success">userUpdateList.jsp</result>
+			<result name="error">adminPage.jsp</result>
+		</action>
+
 		<!-- UserUpdateAction -->
 		<action name="UserUpdateAction" class="com.internousdev.ecsite.action.UserUpdateAction"
 		method="execute">
 			<result name="success">userUpdate.jsp</result>
-			<result name="error">adminPage.jsp</result>
+		</action>
+
+		<!-- UserUpdateConfirmAction -->
+		<action name="UserUpdateConfirmAction" class="com.internousdev.ecsite.action.UserUpdateConfirmAction"
+		method="execute">
+			<result name="success">userUpdateConfirm.jsp</result>
 		</action>
 
 		<!-- ItemCreateAction -->
@@ -111,7 +123,27 @@
 		<!-- ItemDeleteAction -->
 		<action name="ItemDeleteAction" class="com.internousdev.ecsite.action.ItemDeleteAction"
 		method="execute">
-			<result name="success">itemDelete.jsp</result>
+			<result name="success">itemDeleteConfirm.jsp</result>
+			<result name="error">itemDeleteList.jsp</result>
+		</action>
+
+		<!-- ItemAllDeleteAction -->
+		<action name="ItemAllDeleteAction" class="com.internousdev.ecsite.action.ItemAllDeleteAction"
+		method="execute">
+			<result name="success">itemDeleteList.jsp</result>
+		</action>
+
+		<!-- GoItemUpdateAction -->
+		<action name="GoItemUpdateAction" class="com.internousdev.ecsite.action.GoItemUpdateAction"
+		method="execute">
+			<result name="success">itemUpdateList.jsp</result>
+		</action>
+
+
+		<!-- GoItemDeleteAction -->
+		<action name="GoItemDeleteAction" class="com.internousdev.ecsite.action.GoItemDeleteAction"
+		method="execute">
+			<result name="success">itemDeleteList.jsp</result>
 		</action>
 
 		</package>

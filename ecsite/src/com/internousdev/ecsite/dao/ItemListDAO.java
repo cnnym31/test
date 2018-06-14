@@ -1,4 +1,3 @@
-
 package com.internousdev.ecsite.dao;
 
 import java.sql.Connection;
@@ -8,40 +7,39 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.internousdev.ecsite.dto.UserListDTO;
+import com.internousdev.ecsite.dto.ItemListDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
-public class UserListDAO {
+public class ItemListDAO {
 
-	public List<UserListDTO> getUserList() throws SQLException{
-		List<UserListDTO> userList = new ArrayList<UserListDTO>();
+	public List<ItemListDTO> getItemList() throws SQLException{
+		List<ItemListDTO> itemList = new ArrayList<ItemListDTO>();
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "SELECT * FROM login_user_transaction";
+		String sql = "select * from item_info_transaction";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()){
-				UserListDTO dto = new UserListDTO();
+				ItemListDTO dto = new ItemListDTO();
 				dto.setId(resultSet.getInt("id"));
-				dto.setLoginId(resultSet.getString("login_id"));
-				dto.setLoginPassword(resultSet.getString("login_pass"));
-				dto.setUserName(resultSet.getString("user_name"));
+				dto.setItemName(resultSet.getString("item_name"));
+				dto.setItemPrice(resultSet.getInt("item_price"));
+				dto.setItemStock(resultSet.getInt("item_stock"));
 				dto.setInsert_date(resultSet.getString("insert_date"));
 				dto.setUpdate_date(resultSet.getString("update_date"));
-				userList.add(dto);
+				itemList.add(dto);
 			}
-
 		} catch (Exception e){
 			e.printStackTrace();
 		} finally{
 			connection.close();
 		}
 
-		return userList;
+		return itemList;
 	}
 
 }

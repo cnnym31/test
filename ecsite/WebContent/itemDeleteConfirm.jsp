@@ -10,7 +10,8 @@
 		<meta http-equiv="imagetoolbar" content="no"/>
 		<meta name="description" content=""/>
 		<meta name="keywords" content=""/>
-		<title>UserUpdate画面</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<title>ItemDeleteConfirm画面</title>
 
 		<style type="text/css">
 		/* ========TAG LAYOUT======== */
@@ -56,64 +57,14 @@
 				clear:both;
 			}
 		</style>
+		<script type="text/javascript">
+			function submitAction(url){
+				$('form').attr('action', url);
+				$('form').submit();
+			}
+		</script>
 </head>
 <body>
-
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
-
-	<div id="main">
-		<div id="top">
-			<p>UserUpdate</p>
-		</div>
-
-		<div>
-			<table>
-				<s:form action="UserUpdateConfirmAction">
-					<tr>
-						<td>
-							<label>ログインID：</label>
-						</td>
-						<td>
-							<input type="text" name="newLoginUserId" value=""/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>ログインPASS：</label>
-						</td>
-						<td>
-							<input type="text" name="newLoginPassword" value=""/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>ユーザー名：</label>
-						</td>
-						<td>
-							<input type="text" name="newUserName" value=""/>
-						</td>
-					</tr>
-					<s:submit value="更新"/>
-				</s:form>
-			</table>
-
-			<div>
-				<span>前画面に戻る場合は</span>
-				<a href='<s:url action="GoUserPadateAction"/>'>こちら</a>
-				<br>
-				<span>管理者画面に戻る場合は</span>
-				<a href='<s:url action="GoAdminPageAction"/>'>こちら</a>
-			</div>
-		</div>
-	</div>
-
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
-
+  TEST
 </body>
 </html>

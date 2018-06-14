@@ -10,7 +10,7 @@
 		<meta http-equiv="imagetoolbar" content="no"/>
 		<meta name="description" content=""/>
 		<meta name="keywords" content=""/>
-		<title>UserUpdate画面</title>
+		<title>UserUpdateConfirm画面</title>
 
 		<style type="text/css">
 		/* ========TAG LAYOUT======== */
@@ -66,47 +66,45 @@
 
 	<div id="main">
 		<div id="top">
-			<p>UserUpdate</p>
+			<p>UserUpdateConfirm</p>
 		</div>
 
 		<div>
+			<h3>更新する内容は以下でよろしいですか。</h3>
+
 			<table>
-				<s:form action="UserUpdateConfirmAction">
-					<tr>
+				<s:form action="UserUpdateCompleteAction">
+					<tr id="box">
 						<td>
 							<label>ログインID：</label>
 						</td>
 						<td>
-							<input type="text" name="newLoginUserId" value=""/>
+							<s:property value="newLoginUserId" escape="false"/>
 						</td>
 					</tr>
-					<tr>
+					<tr id="box">
 						<td>
 							<label>ログインPASS：</label>
 						</td>
 						<td>
-							<input type="text" name="newLoginPassword" value=""/>
+							<s:property value="newLoginPassword" escape="false"/>
 						</td>
 					</tr>
-					<tr>
+					<tr id="box">
 						<td>
 							<label>ユーザー名：</label>
 						</td>
 						<td>
-							<input type="text" name="newUserName" value=""/>
+							<s:property value="newUserName" escape="false"/>
 						</td>
 					</tr>
-					<s:submit value="更新"/>
+					<tr>
+						<td>
+							<s:submit value="完了"/>
+						</td>
+					</tr>
 				</s:form>
 			</table>
-
-			<div>
-				<span>前画面に戻る場合は</span>
-				<a href='<s:url action="GoUserPadateAction"/>'>こちら</a>
-				<br>
-				<span>管理者画面に戻る場合は</span>
-				<a href='<s:url action="GoAdminPageAction"/>'>こちら</a>
-			</div>
 		</div>
 	</div>
 
