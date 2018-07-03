@@ -1,2 +1,0 @@
-(1, "admin", "admin", "管理者", "管理者", "かんりしゃ", "かんりしゃ", 0, "admin@gmail.com", 0, 0, now(), now()),
-(2, "guest", "guest", "ゲスト", "ユーザー", "げすと", "ゆーざー", 0, "guest@gmail.com", 0, 0, now(), now());
